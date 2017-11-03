@@ -3,8 +3,13 @@ __precompile__()
 
 module herramientas
 
-export metodo_newton, integral_rectangulo, integral_trapecio, integral_simpson, interpolador_lagrange, metodo_euler, metodo_euler_implicito, runge_kutta_o4
+export derivacion_simetrica, metodo_newton, integral_rectangulo, integral_trapecio, integral_simpson, interpolador_lagrange, metodo_euler, metodo_euler_implicito, runge_kutta_o4
 
+"""Función para aproximar la derivada numéricamente por método simétrico 
+``f`` -> la función a usar, 
+ ``x0`` -> condicion inicial,
+ ``h`` -> incremento para la aproximación
+"""
 function derivacion_simetrica(f,x0,h)
     df=(f(x0+h)-f(x0-h))/(2*h)
     return df #Regresa el valor de la derivada simétrica
